@@ -33,8 +33,11 @@ app.get("/",(req,res)=>{
 
 })
 
-connectDB(); 
-app.listen(PORT,()=>{
-    console.log("server is running",PORT);
-    
+
+connectDB().then(()=>{
+    app.listen(PORT,()=>{
+        console.log("server is running",PORT);
+        
+    })
+
 })
